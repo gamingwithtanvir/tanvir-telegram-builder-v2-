@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: tanvir-telegram-builder
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: AUTO_START_BOTS
+        value: "true"
+      - key: ADMIN_ID
+        value: TANVIR
+      - key: ADMIN_PASSWORD
+        sync: false
